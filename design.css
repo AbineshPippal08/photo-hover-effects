@@ -1,0 +1,143 @@
+body {
+    --metal-tex: url(https://st4.depositphotos.com/1807406/19750/v/950/depositphotos_197500840-stock-illustration-colorful-seamless-paisley-pattern-decorative.https://img.freepik.com/free-vector/hand-drawn-vintage-floral-pattern_79603-1670.jpg?w=1060&t=st=1682013680~exp=1682014280~hmac=b6343604db0db49f377cc692efea9e484191733ceb952b85d19c87ed98a16559);
+    
+    background:black;
+    
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+ 
+
+  .main {
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  .metal {
+    height: 20px auto;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    color: transparent;
+    font-family: impact, sans-serif;
+    font-size: 10rem;
+    letter-spacing: 0.05em;
+    background-image: var(--metal-tex);
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+  
+  .texture,
+  .texture::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+    
+  .texture {
+    background-image: linear-gradient(to bottom, blue, white 50%, red 65%, white);
+    background-attachment: fixed;
+    mix-blend-mode:color-dodge;
+  }
+
+  
+  .texture::after {
+    content:counter(absolute);
+    background-image: var(--metal-tex);
+    background-size: cover;
+    filter: saturate(0) brightness(0.8) contrast(4);
+    mix-blend-mode:multiply;
+  }
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#wrapper{
+    height: 50%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+.container{
+    height: 100%;
+    max-width: 1200px;
+    margin:0 auto;
+    padding: 20px;
+}
+
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card{
+    width: 32%;
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+  
+      border: 5px solid #555;
+    }
+
+
+.card img{
+    height: 100%;
+    width: 100%;
+    filter: grayscale(100%);
+    box-shadow: 0 0 20px #333;
+    object-fit: cover;
+}
+
+
+.card:hover{
+    transform:scale(1.03);
+    filter: drop-shadow(0 0 10px #333);
+    transition: 0.32s;
+    filter: drop-shadow(0 0 10px #333);  
+}
+
+
+.card:hover img{
+    filter: grayscale(0%);
+}
+
+
+.card figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    width: 100%;
+    height: 20%;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 100%);
+transition: 0.3s ;
+}
+
+
+.card:hover figcaption{
+    opacity: 1;
+    transform: scale(1.03);
+}
